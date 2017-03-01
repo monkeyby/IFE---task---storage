@@ -48,7 +48,13 @@
 	 		var oLi = ul.getElementsByTagName("li");
 
 	 		var para = document.createElement("li");
-	 		var node = document.createTextNode(input.value);
+
+	 		if(isNaN(input.value)){
+	 			alert("请输入数字！");
+	 		}else{
+	 			var node = document.createTextNode(input.value);
+	 		}
+	 		
 	 		para.appendChild(node);
 
 	 		if(oLi.length > 0){
@@ -66,7 +72,13 @@
 	 	function right_in(){
 
 	 		var para = document.createElement("li");
-	 		var node = document.createTextNode(input.value);
+
+	 		if(isNaN(input.value)){
+	 			alert("请输入数字！");
+	 		}else{
+	 			var node = document.createTextNode(input.value);
+	 		}
+	 		
 	 		para.appendChild(node);
 	 		ul.appendChild(para);
 
@@ -108,12 +120,6 @@
 	 		ul.removeChild(target);
 	 	}
 
-	 	function getLi(){
-
-	 		 oLi = ul.getElementsByTagName("li")
-	 		 //alert(oLi.length);
-
-	 	}
 	 	//初始化函数
 		function init(){
 			deBug();
@@ -156,17 +162,9 @@
 				right_out();
 
 			}
-
-
-			setInterval(getLi,1000);
-			
-				for(var i = 0; i < oLi.length ; i++){
-					alert("11");
-					oLi[i].onclick = function(event){
-					alert("11");
+				
+					ul.onclick = function(event){
 					removeLi(event);
-
-				}
 			
 			}
 		}
